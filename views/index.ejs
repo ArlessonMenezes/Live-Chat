@@ -58,6 +58,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script> 
 <script>
     
     let socket = io("http://localhost:3000");
@@ -89,6 +90,14 @@
         const msgInput = document.querySelector('#msg')
         msgInput.value = '';
     }
+
+    tinymce.init({
+        language: 'pt_PT',
+        selector: '#msg',
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emotcions'
+        ]
+    })
 
 </script>
 </html>
